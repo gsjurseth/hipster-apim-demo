@@ -21,6 +21,7 @@ spec:
     metadata:
       labels:
         app: frontend
+        version: gray
     spec:
       containers:
         - name: server
