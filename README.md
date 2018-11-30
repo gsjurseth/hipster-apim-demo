@@ -23,11 +23,15 @@ export CLUSTER_NAME=hipster-demo
 
 gcloud config set project ${PROJECT_ID}
 
+# Get the list of available gke-cluster versions
+gcloud container get-server-config --zone us-central1-a
+
+# in my case i've vose 1.11.2-gke.18
 gcloud container clusters create ${CLUSTER_NAME} \
     --machine-type=n1-standard-2 \
     --num-nodes 3 \
     --enable-autoscaling --min-nodes 1 --max-nodes 10 \
-    --cluster-version=1.11.2-gke.9 \
+    --cluster-version=1.11.2-gke.18 \
     --zone=${ZONE} \
     --no-enable-legacy-authorization
 
