@@ -25,15 +25,6 @@ spec:
   http:
   - match:
     - uri: 
-        prefix: "/"
-    route:
-    - destination:
-        host: frontend
-        subset: gray
-        port:
-          number: 80       
-  - match:
-    - uri: 
         prefix: "/products"
     route:
     - destination:

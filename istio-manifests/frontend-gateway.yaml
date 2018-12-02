@@ -40,5 +40,20 @@ spec:
   - route:
     - destination:
         host: frontend
+        subset: gray
         port:
           number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: frontends-destination
+spec:
+  host: frontend # interpreted as reviews.foo.svc.cluster.local
+  subsets:
+  - name: gray
+    labels:
+      version: gray
+  - name: blue
+    labels:
+      version: blue
