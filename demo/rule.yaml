@@ -15,4 +15,5 @@ spec:
   - handler: apigee-handler.apigee.istio-system
     instances:
     - apigee.analytics
-    - apigee.authorization
+      #- apigee.authorization
+      #- apigee.quota
